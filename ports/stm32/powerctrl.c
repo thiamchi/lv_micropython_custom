@@ -358,8 +358,10 @@ set_clk:
         // Set HSE as system clock source to allow modification of the PLL configuration
         // We then change to PLL after re-configuring PLL
         #if MICROPY_HW_CLK_USE_HSI
+#pragma message "SYSCLKSource is HSI"
         RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
         #else
+#pragma message "SYSCLKSource is HSE"
         RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSE;
         #endif
     } else {

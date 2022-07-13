@@ -37,6 +37,10 @@
 #define MICROPY_PY_STM (1)
 #endif
 
+//#ifndef MICROPY_HW_CLK_USE_HSI
+//#define MICROPY_HW_CLK_USE_HSI (1)
+//#endif
+
 // Whether to include legacy functions and classes in the pyb module
 #ifndef MICROPY_PY_PYB_LEGACY
 #define MICROPY_PY_PYB_LEGACY (1)

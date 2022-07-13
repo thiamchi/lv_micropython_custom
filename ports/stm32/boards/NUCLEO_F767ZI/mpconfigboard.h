@@ -24,15 +24,12 @@ void NUCLEO_F767ZI_board_early_init(void);
 
 #if MICROPY_HW_CLK_USE_HSI
 #define MICROPY_HW_CLK_PLLM (8)
-#define MICROPY_HW_CLK_PLLN (216)
-#define MICROPY_HW_CLK_PLLP (RCC_PLLP_DIV2)
-#define MICROPY_HW_CLK_PLLQ (9)
 #else
 #define MICROPY_HW_CLK_PLLM (4)
+#endif
 #define MICROPY_HW_CLK_PLLN (216)
 #define MICROPY_HW_CLK_PLLP (RCC_PLLP_DIV2)
 #define MICROPY_HW_CLK_PLLQ (9)
-#endif
 #define MICROPY_HW_FLASH_LATENCY (FLASH_LATENCY_7) // 210-216 MHz needs 7 wait states
 // Add on end
 

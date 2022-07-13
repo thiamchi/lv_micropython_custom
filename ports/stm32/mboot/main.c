@@ -74,10 +74,16 @@
 #undef MICROPY_HW_CLK_PLLP
 #undef MICROPY_HW_CLK_PLLQ
 #undef MICROPY_HW_CLK_PLLR
+
+#if defined(MICRO_HW_CLK_USE_HSI)
+#define MICROPY_HW_CLK_PLLM (HSI_VALUE / 1000000)
+#define MICROPY_HW_CLK_PLLQ (8)
+#else
 #define MICROPY_HW_CLK_PLLM (HSE_VALUE / 1000000)
+#define MICROPY_HW_CLK_PLLQ (4)
+#endif
 #define MICROPY_HW_CLK_PLLN (192)
 #define MICROPY_HW_CLK_PLLP (MICROPY_HW_CLK_PLLN / (CORE_PLL_FREQ / 1000000))
-#define MICROPY_HW_CLK_PLLQ (4)
 #define MICROPY_HW_CLK_PLLR (2)
 
 // Work out which USB device to use for the USB DFU interface
